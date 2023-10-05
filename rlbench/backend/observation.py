@@ -37,7 +37,8 @@ class Observation(object):
                  gripper_touch_forces: np.ndarray,
                  task_low_dim_state: np.ndarray,
                  ignore_collisions: np.ndarray,
-                 misc: dict):
+                 misc: dict,
+                 waypoint: np.ndarray = None):
         self.left_shoulder_rgb = left_shoulder_rgb
         self.left_shoulder_depth = left_shoulder_depth
         self.left_shoulder_mask = left_shoulder_mask
@@ -69,6 +70,7 @@ class Observation(object):
         self.task_low_dim_state = task_low_dim_state
         self.ignore_collisions = ignore_collisions
         self.misc = misc
+        self.waypoint = waypoint
 
     def get_low_dim_data(self) -> np.ndarray:
         """Gets a 1D array of all the low-dimensional obseervations.

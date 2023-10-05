@@ -29,7 +29,7 @@ DEPTH_SCALE = 2**24 - 1
 # functions
 def get_stored_demo(data_path, index):
   episode_path = os.path.join(data_path, EPISODE_FOLDER % index)
-  
+
   # low dim pickle file
   with open(os.path.join(episode_path, LOW_DIM_PICKLE), 'rb') as f:
     obs = pickle.load(f)
